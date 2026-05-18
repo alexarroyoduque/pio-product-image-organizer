@@ -1,3 +1,5 @@
+# Este fichero se usa solo para desarrollo local con `wrangler pages dev`.
+# El deploy en Cloudflare Pages se configura directamente en el dashboard,
+# NO a través de wrangler.toml — el dashboard detecta la carpeta functions/ automáticamente.
 name = "pio-product-image-organizer"
 compatibility_date = "2024-01-01"
-pages_build_output_dir = "dist"

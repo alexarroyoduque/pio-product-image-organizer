@@ -1,0 +1,14 @@
+# ─── Cloudflare Pages — variables de entorno para desarrollo local ────────────
+# Copia este fichero como .dev.vars (nunca lo subas a git).
+# wrangler pages dev lo carga automáticamente (equivalente a .env en Express).
+#
+# En producción las variables se definen en el dashboard de Cloudflare Pages
+# → Settings → Environment variables
+
+# AppSumo API credentials (obtenlos en tu vendor dashboard de AppSumo)
+APPSUMO_CLIENT_ID=your_appsumo_client_id_here
+APPSUMO_CLIENT_SECRET=your_appsumo_client_secret_here
+
+# Demo bypass: cualquier licencia igual a este valor pasa sin llamar a AppSumo
+# Útil para probar el flujo de login localmente. Quita o deja vacío en prod.
+DEMO_LICENSE_KEY=DEMO-0000-0000-0000

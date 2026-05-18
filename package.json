@@ -4,12 +4,12 @@
   "type": "module",
   "engines": { "node": ">=18.0.0" },
   "scripts": {
-    "dev": "concurrently \"vite\" \"nodemon server/index.js\"",
+    "dev": "concurrently \"vite --port 5173\" \"wrangler pages dev --proxy 5173 --port 8788\"",
     "dev:frontend": "vite",
     "dev:server": "nodemon server/index.js",
     "build": "vite build",
-    "start": "NODE_ENV=production node server/index.js",
-    "preview": "vite preview"
+    "preview": "wrangler pages dev dist --port 8788",
+    "start": "NODE_ENV=production node server/index.js"
   },
   "dependencies": {
     "lit": "^3.2.0",
@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "vite": "^5.4.0",
+    "wrangler": "^3.0.0",
     "concurrently": "^8.2.2",
     "nodemon": "^3.0.3"
   }

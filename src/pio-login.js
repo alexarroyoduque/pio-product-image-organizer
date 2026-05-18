@@ -171,6 +171,38 @@ export class PioLogin extends I18nMixin(LitElement) {
       line-height: 1.4;
     }
 
+    /* ── Demo hint ── */
+    .demo-hint {
+      margin-top: 10px;
+      padding: 9px 13px;
+      background: #0f2414;
+      border: 1px solid #166534;
+      border-radius: 8px;
+      font-size: 12px;
+      color: #4ade80;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: background 0.12s;
+      user-select: none;
+    }
+    .demo-hint:hover { background: #14351c; }
+    .demo-hint code {
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 12px;
+      background: rgba(74,222,128,0.12);
+      padding: 1px 5px;
+      border-radius: 4px;
+      color: #86efac;
+    }
+    .demo-hint .fill-arrow {
+      margin-left: auto;
+      opacity: 0.5;
+      font-size: 11px;
+      flex-shrink: 0;
+    }
+
     /* ── AppSumo badge ── */
     .as-badge {
       display: flex;
@@ -386,6 +418,11 @@ export class PioLogin extends I18nMixin(LitElement) {
               @input=${e => { this._key = e.target.value.toUpperCase() }}
               @keydown=${this._onKeydown}
             />
+            <div class="demo-hint" @click=${() => { this._email = this._email || 'demo@example.com'; this._key = 'DEMO-0000-0000-0000' }}>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="8"/><line x1="12" y1="12" x2="12" y2="16"/></svg>
+              Demo: <code>DEMO-0000-0000-0000</code>
+              <span class="fill-arrow">↑ click to fill</span>
+            </div>
           </div>
 
           <button class="btn-activate" type="submit" ?disabled=${this._loading}>
